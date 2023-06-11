@@ -1,0 +1,345 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  --top: 0;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 0.5rem;
+}
+
+.bg-blur {
+  background-image: url('/bg.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+h1 {
+  font-family: "Sail", "sans-serif";
+  font-size: 3em;
+  color: #fff;
+  line-height: 1.1;
+  margin: 1rem 0;
+  text-shadow: 1px 1px 10px #ffeb00;
+  
+}
+
+#app {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  text-align: center;
+  background-color: green;
+  border: 2px solid #fff;
+  outline: 2px solid green;
+  border-radius: 10px;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #3178c6aa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 0.5rem;
+}
+button:enabled:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: rgb(224, 224, 224);
+  }
+}
+
+.data-game {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.last-score, .score-mean, .games{
+  font-family: 'Pangolin', sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  margin: 0;
+  border-right: 1px solid #fff;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.score-mean{
+  border-right: none;
+}
+
+.data{
+  display: flex;
+  min-width: 40px;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+  background-color: #ffeb00;
+  color: #6a6200;
+}
+
+.give-btn:disabled {
+  background-color: #959595;
+  color: #fff;
+}
+
+.give-btn {
+  background-color: #cc2f14;
+  color: #fff;
+}
+
+.cards-wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+}
+
+.display-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cards-gotten-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #00a100;
+  border: 2px solid #fff;
+  outline: 2px solid green;
+  min-height: 115px;
+}
+
+.cards-gotten-wrapper:before {
+  content: "🂡";
+  font-size: 3rem;
+  color: #fff;
+  position: absolute;
+  left: 2%;
+  top: 1%;
+  transform: rotate(335deg);
+}
+
+.cards-gotten-wrapper:after {
+  content: "🂡";
+  font-size: 3rem;
+  color: #fff;
+  position: absolute;
+  right: 2%;
+  bottom: 1%;
+  transform: rotate(20deg);
+}
+
+.card-gotten-img {
+  position: relative;
+  max-width: 60px;
+  top: 0;
+  width: 100%;
+  border-radius: 5px;
+  vertical-align: bottom;
+  transition: top 0.5s ease-in-out;
+  z-index: 9;
+}
+
+.card-gotten-img.is-created {
+  top: -250px;
+}
+
+.points-wrapper {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  color: #6a6200;
+  background-color: #ffeb00;
+  max-width: 500px;
+  margin: 1rem auto;
+  border: 2px solid #6a6200;
+  outline: 2px solid #ffeb00;
+}
+
+.flip-card {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.is-active .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.card-img {
+  width: 100%;
+  max-width: 140px;
+  border-radius: 12px;
+}
+
+.flip-card.moving-out {
+  top: 1000px!important;
+  transition: top 1s ease-in-out;
+}
+
+.modal {
+  position: absolute;
+  min-width: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.modal h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.modal p {
+  font-size: 1.5rem;
+}
+
+.overlay {
+  position: absolute;
+  background-color: #00000054;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
